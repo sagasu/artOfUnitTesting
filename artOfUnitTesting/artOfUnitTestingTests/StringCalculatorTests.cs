@@ -1,4 +1,5 @@
 ﻿using System;
+using CommonTests;
 using NUnit.Framework;
 using artOfUnitTesting;
 
@@ -6,13 +7,6 @@ using artOfUnitTesting;
 
 namespace artOfUnitTestingTests
 {
-    
-
-    public class FakeSettings : ISettings
-    {
-        public bool IsEnabled { get; set; }
-    }
-
     [TestFixture]
     public class StringCalculatorTests
     {
@@ -141,8 +135,5 @@ namespace artOfUnitTestingTests
         }
     }
 
-    internal class FakeLogger : IMyLogger
-    {
-        public string Message { get; set; }
-    }
+    
 }

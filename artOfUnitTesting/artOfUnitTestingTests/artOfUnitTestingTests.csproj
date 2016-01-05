@@ -53,6 +53,10 @@
       <Project>{960251BB-326B-4F3C-9309-B3DBBF54E2AF}</Project>
       <Name>artOfUnitTesting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CommonTests\CommonTests.csproj">
+      <Project>{924CAA4D-2E50-4F1B-BDF1-1F776DBEAB2F}</Project>
+      <Name>CommonTests</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

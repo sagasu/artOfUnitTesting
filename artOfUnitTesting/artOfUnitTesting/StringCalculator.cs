@@ -34,7 +34,6 @@ namespace artOfUnitTesting
                 _logger.Message = DEFAULT_SUM_VALUE.ToString();
                 return DEFAULT_SUM_VALUE;
             }
-                
 
             numbers = ReplaceCustomDelimiterWithDefault(numbers);
 

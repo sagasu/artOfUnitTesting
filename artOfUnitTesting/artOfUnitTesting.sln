@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "artOfUnitTestingTests", "ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "artOfUnitTestingIntegrationTests", "artOfUnitTestingIntegrationTests\artOfUnitTestingIntegrationTests.csproj", "{9041F423-6D8E-49EB-9EA3-5FB9D58B160D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonTests", "CommonTests\CommonTests.csproj", "{924CAA4D-2E50-4F1B-BDF1-1F776DBEAB2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9041F423-6D8E-49EB-9EA3-5FB9D58B160D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9041F423-6D8E-49EB-9EA3-5FB9D58B160D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9041F423-6D8E-49EB-9EA3-5FB9D58B160D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924CAA4D-2E50-4F1B-BDF1-1F776DBEAB2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924CAA4D-2E50-4F1B-BDF1-1F776DBEAB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924CAA4D-2E50-4F1B-BDF1-1F776DBEAB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924CAA4D-2E50-4F1B-BDF1-1F776DBEAB2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
