@@ -6,8 +6,15 @@ using System.Text.RegularExpressions;
 //Not allowed to use Regex :(
 namespace artOfUnitTesting
 {
-    public class StringCalculator
+    public class StringCalculator 
     {
+        private readonly ISettings _settings;
+
+        public StringCalculator(ISettings settings)
+        {
+            _settings = settings;
+        }
+
         private const char DEFAULT_DELIMITER = ',';
         private const char END_LINE_DELIMITER = '\n';
         private const string CUSTOM_DELIMITER_PREFIX = @"//[";
@@ -15,6 +22,9 @@ namespace artOfUnitTesting
 
         public int Add(string numbers)
         {
+            if (!_settings.IsEnabled)
+                throw new ArgumentException("is not enabled");
+            
             if(string.IsNullOrWhiteSpace(numbers))
                 return 0;
 
@@ -42,5 +52,13 @@ namespace artOfUnitTesting
             }
             return numbers;
         }
+
+
+    }
+
+    public interface ISettings
+    {
+        bool IsEnabled { get; set; }
+
     }
 }
