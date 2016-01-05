@@ -3,8 +3,11 @@ using NUnit.Framework;
 using artOfUnitTesting;
 
 //http://osherove.com/tdd-kata-1
+
 namespace artOfUnitTestingTests
 {
+    
+
     public class FakeSettings : ISettings
     {
         public bool IsEnabled { get; set; }
@@ -13,12 +16,34 @@ namespace artOfUnitTestingTests
     [TestFixture]
     public class StringCalculatorTests
     {
-
-        private static StringCalculator StringCalculatorFactory(bool isEnabled = true)
+        
+        private StringCalculator StringCalculatorFactory(bool isEnabled = true)
         {
-            var calculator = new StringCalculator(new FakeSettings { IsEnabled = isEnabled });
+            var logger = new FakeLogger();
+            return StringCalculatorFactory(isEnabled, logger);
+        }
+
+        private StringCalculator StringCalculatorFactory(bool isEnabled, IMyLogger logger)
+        {
+            var calculator = new StringCalculator(new FakeSettings { IsEnabled = isEnabled }, logger);
             return calculator;
         }
+
+        [TestCase("", "0")]
+        [TestCase("1", "1")]
+        [TestCase("1,2,3", "6")]
+        public void Add_AnyString_WritesToLog(string number, string loggedMessage)
+        {
+            IMyLogger logger = new FakeLogger();
+
+            var calculator = StringCalculatorFactory(true, logger);
+
+            calculator.Add(number);
+
+            Assert.AreEqual(loggedMessage, logger.Message);
+        }
+
+        
 
         [Test]
         public void Add_EmptyString_ReturnDefaultValue()
@@ -114,5 +139,10 @@ namespace artOfUnitTestingTests
                 Assert.AreEqual(e.Message, "Negatives not allowed");
             }
         }
+    }
+
+    internal class FakeLogger : IMyLogger
+    {
+        public string Message { get; set; }
     }
 }

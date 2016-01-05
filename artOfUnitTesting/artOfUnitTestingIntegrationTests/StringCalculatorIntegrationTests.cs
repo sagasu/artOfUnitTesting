@@ -17,7 +17,7 @@ namespace artOfUnitTestingIntegrationTests
             settings.IsEnabled = bool.Parse(isEnabledFromFile);
 
 
-            var calc = new StringCalculator(settings);
+            var calc = new StringCalculator(settings, TODO);
 
             var sum = calc.Add("2");
 
@@ -32,7 +32,7 @@ namespace artOfUnitTestingIntegrationTests
             var isEnabledFromFile = appSettings["isEnabledFalse"];
             settings.IsEnabled = bool.Parse(isEnabledFromFile);
 
-            var calc = new StringCalculator(settings);
+            var calc = new StringCalculator(settings, TODO);
 
             Assert.Throws<ArgumentException>(() => calc.Add("2"));
         }
